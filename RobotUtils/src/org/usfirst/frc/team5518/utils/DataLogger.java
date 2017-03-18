@@ -15,9 +15,8 @@ import java.util.TimeZone;
  * robot metrics
  * 
  * @author Hamzah Aslam
- * @author Chris Gerth (FRC Team 1736)
  * 
- * Adapted from following:
+ * Adapted from Chris Gerth (FRC Team 1736) at following link:
  * https://github.com/RobotCasserole1736/RobotCasserole2016/blob/master/
  * RobotCasserole2016/src/org/usfirst/frc/team1736/robot/CsvLogger.java
  */
@@ -27,7 +26,7 @@ public class DataLogger {
 	public static final String DIRECTORY = System.getProperty("user.home")
 			+ File.separator + "csv";
 	
-	/** Whether or not the CSV file is open to write to */
+	/** Whether or not the file is open to write to */
 	private boolean isFileOpen = false;
 	
 	/** The writer to the CSV file */
