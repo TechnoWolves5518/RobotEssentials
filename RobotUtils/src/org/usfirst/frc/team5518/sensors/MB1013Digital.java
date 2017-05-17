@@ -16,6 +16,12 @@ public class MB1013Digital extends Ultrasonic {
 	/** Time (sec) for the ping trigger pulse. **/
 	private static final double kPingTime = 25 * 1e-6;
 	
+	/** Minimum sensor range in mm */
+	public static final int MIN_RANGE = 300;
+	
+	/** Maximum sensor range in mm */
+	public static final int MAX_RANGE = 5000;
+	
 	/*
 	 * Pin Out
 	 * Pin 1 --- temp. sensor (optional)
