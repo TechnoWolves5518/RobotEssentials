@@ -11,6 +11,17 @@ import edu.wpi.first.wpilibj.AnalogInput;
  */
 public class MB1013Analog extends AnalogInput {
 	
+	/*
+	 * Pin Out
+	 * Pin 1 --- temp. sensor (optional)
+	 * Pin 2 --- Pulse width with scale factor of 1us per mm
+	 * Pin 3 --- Analog voltage output with scale factor of (VCC / 5120) per mm
+	 * Pin 4 --- Hold high for ranging and low to stop. High for > 20 us to start ranging.
+	 * Pin 5 --- Serial with RS232 format. Solder jumper on back for serial with TTL format.
+	 * Pin 6 --- V+ or VCC operating on 2.5V-5.5V DC
+	 * Pin 7 --- GND or ground for DC return
+	 */
+	
 	/** Inches in mm */
 	public static final double INCHES_IN_MM = 0.0393701;
 	
@@ -59,7 +70,7 @@ public class MB1013Analog extends AnalogInput {
 	 * 
 	 * @return The range in inches
 	 */
-	public double getRangeIN() {
+	public double getRangeInches() {
 		return getRangeMM() * INCHES_IN_MM;
 	}
 

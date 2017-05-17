@@ -15,13 +15,13 @@ import edu.wpi.first.wpilibj.Ultrasonic;
  * 
  * @author Hamzah Aslam
  */
-public class ProximityUtils implements Callable<List<Double>> {
+public class SensorUtils implements Callable<List<Double>> {
 
 	private Ultrasonic sensor;  // ultrasonic sensor
 	private long time;  // total length of time to poll ultrasonic
 	private long interval;  // interval between ultrasonic polling
 	
-	private ProximityUtils(Ultrasonic sensor, long time, long interval) {
+	private SensorUtils(Ultrasonic sensor, long time, long interval) {
 		this.sensor = sensor;
 		this.time = time;
 		this.interval = interval;
@@ -48,7 +48,7 @@ public class ProximityUtils implements Callable<List<Double>> {
 	 * @return Average distance
 	 */
 	public static double average(Ultrasonic sensor, long time, long interval) {
-		ProximityUtils task = new ProximityUtils(sensor, time, interval);
+		SensorUtils task = new SensorUtils(sensor, time, interval);
 		ExecutorService threadPool = Executors.newFixedThreadPool(1);
 		Future<List<Double>> future = threadPool.submit(task);
 		
@@ -82,6 +82,10 @@ public class ProximityUtils implements Callable<List<Double>> {
 		}
 		
 		return total / distances.length;
+	}
+	
+	public static double medianFilter() {
+		return 0.0;
 	}
 	
 	/**

@@ -49,8 +49,14 @@ public class EventLogger {
 		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				// create the file
-				File file = new File(DIRECTORY + File.separator
+				// create directory for file
+				File file = new File(DIRECTORY);
+				
+				// create directory if not created
+				file.mkdirs();
+				
+				// create file
+				file = new File(DIRECTORY + File.separator
 						+ getDateTimeString("yyyyMMdd") + ".txt");
 				
 				// create directory if not created
